@@ -75,3 +75,9 @@ width: ;
     flex-direction: column;
     padding-bottom: 100px;
 }
+
+.timer {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}

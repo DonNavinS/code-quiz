@@ -2,6 +2,41 @@ var optionsEl = document.querySelector("#options");
 var questionEl = document.querySelector("#question");
 var titleEl = document.querySelector("#title");
 var instructionsEl = document.querySelector("#instructions");
+var timerEl = document.querySelector("#timer");
+var finalEl = document.querySelector("#end-of-game");
+
+
+var timer = 90
+
+
+function startTimer() {
+
+var timeDisplay = document.createElement("h2");
+timeDisplay.textContent = timer;
+timerEl.appendChild(timeDisplay);
+
+var timerInterval = setInterval(() => {
+    timer --;
+    timeDisplay.textContent = timer;
+
+    if (timer <=0) {
+        clearInterval(timerInterval);
+        finalScore();
+
+    };
+
+
+
+}, 1000);
+};
+
+function stopTimer(){
+    
+}
+function timePenalty() {
+    timer -=5;
+}
+
 
 
 
@@ -44,10 +79,13 @@ function startQuiz() {
 // Go to next question if wrong answer is chosen
     option_2.addEventListener("click", secondQuestion);
     option_2.addEventListener("click", removePrevious);
+    option_2.addEventListener("click", timePenalty);
     option_3.addEventListener("click", secondQuestion);
     option_3.addEventListener("click", removePrevious);
+    option_3.addEventListener("click", timePenalty);
     option_4.addEventListener("click", secondQuestion);
     option_4.addEventListener("click", removePrevious);
+    option_4.addEventListener("click", timePenalty);
 
 
 function removePrevious() {
@@ -65,6 +103,7 @@ function removePrevious() {
 
 var startButton = document.querySelector("#start-button");
 startButton.addEventListener("click", startQuiz);
+startButton.addEventListener("click", startTimer);
 
 
 function secondQuestion() {
@@ -102,10 +141,13 @@ function secondQuestion() {
 
     option_1.addEventListener("click", thirdQuestion);
     option_1.addEventListener("click", removePrevious);
+    option_1.addEventListener("click", timePenalty);
     option_3.addEventListener("click", thirdQuestion);
     option_3.addEventListener("click", removePrevious);
+    option_3.addEventListener("click", timePenalty);
     option_4.addEventListener("click", thirdQuestion);
     option_4.addEventListener("click", removePrevious);
+    option_4.addEventListener("click", timePenalty);
 
     function removePrevious() {
         option_1.remove();
@@ -153,10 +195,14 @@ function thirdQuestion() {
 
     option_1.addEventListener("click", fourthQuestion);
     option_1.addEventListener("click", removePrevious);
+    option_1.addEventListener("click", timePenalty);
     option_3.addEventListener("click", fourthQuestion);
     option_3.addEventListener("click", removePrevious);
+    option_3.addEventListener("click", timePenalty);
     option_4.addEventListener("click", fourthQuestion);
     option_4.addEventListener("click", removePrevious);
+    option_4.addEventListener("click", timePenalty);
+
 
     function removePrevious() {
         option_1.remove();
@@ -202,10 +248,13 @@ function fourthQuestion() {
 
     option_1.addEventListener("click", fifthQuestion);
     option_1.addEventListener("click", removePrevious);
+    option_1.addEventListener("click", timePenalty);
     option_3.addEventListener("click", fifthQuestion);
     option_3.addEventListener("click", removePrevious);
+    option_3.addEventListener("click", timePenalty);
     option_4.addEventListener("click", fifthQuestion);
     option_4.addEventListener("click", removePrevious);
+    option_4.addEventListener("click", timePenalty);
 
     function removePrevious() {
         option_1.remove();
@@ -251,10 +300,13 @@ function fifthQuestion() {
 
     option_1.addEventListener("click", finalScore);
     option_1.addEventListener("click", removePrevious);
+    option_1.addEventListener("click", timePenalty);
     option_3.addEventListener("click", finalScore);
     option_3.addEventListener("click", removePrevious);
+    option_3.addEventListener("click", timePenalty);
     option_4.addEventListener("click", finalScore);
     option_4.addEventListener("click", removePrevious);
+    option_4.addEventListener("click", timePenalty);
 
     function removePrevious() {
         option_1.remove();
@@ -270,5 +322,11 @@ function fifthQuestion() {
 function finalScore() {
 titleEl.remove();
 instructionsEl.remove();
-
+questionEl.remove();
+optionsEl.remove();
+var endOfQuiz = document.createElement("h1")
+endOfQuiz.classname = "end-of-quiz";
+endOfQuiz.textContent = "This is your final Score!";
+finalEl.appendChild(endOfQuiz);
+var status = "done";
 }
