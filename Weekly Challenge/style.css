@@ -41,7 +41,7 @@ border: red 3px solid;
 }
 
 
-.answer-button {
+.correct-answer-button {
 transition-duration: 0.4s;
 font-size: 30px;
 border-radius: 6px;
@@ -49,10 +49,25 @@ border: red 3px solid;
 width: ;
 }
 
-.answer-button:hover {
+.correct-answer-button:hover {
     background-color: red;
     color: white;
 }
+
+
+.wrong-answer-button {
+    transition-duration: 0.4s;
+    font-size: 30px;
+    border-radius: 6px;
+    border: red 3px solid;
+    width: ;
+    }
+    
+.wrong-answer-button:hover {
+    background-color: red;
+    color: white;
+}
+
 
 .options {
     display: flex;
