@@ -1,3 +1,8 @@
+*{
+    background-color: rgb(216, 236, 103);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 h1 {
 text-align: center;
 padding-top: 100px;
@@ -18,12 +23,12 @@ p {
 transition-duration: 0.4s;
 font-size: 30px;
 border-radius: 6px;
-border: red 3px solid;
+border: rgb(87, 2, 87) 3px solid;
 
 }
 
 .start-button:hover {
-    background-color: red;
+    background-color: rgb(87, 2, 87);
     color: white;
 }
 
@@ -41,33 +46,31 @@ border: red 3px solid;
 }
 
 
-.correct-answer-button {
+.answer-button {
 transition-duration: 0.4s;
 font-size: 30px;
 border-radius: 6px;
-border: red 3px solid;
+border: rgb(87, 2, 87) 3px solid;
 width: ;
 }
 
-.correct-answer-button:hover {
-    background-color: red;
+.answer-button:hover {
+    background-color: rgb(87, 2, 87);
     color: white;
 }
 
-
-.wrong-answer-button {
-    transition-duration: 0.4s;
-    font-size: 30px;
-    border-radius: 6px;
-    border: red 3px solid;
-    width: ;
-    }
+.submit-button {
     
-.wrong-answer-button:hover {
-    background-color: red;
-    color: white;
+transition-duration: 0.4s;
+font-size: 30px;
+border-radius: 6px;
+border: rgb(87, 2, 87) 3px solid;
 }
 
+.submit-button:hover {
+    background-color: rgb(87, 2, 87);
+    color: white;
+}
 
 .options {
     display: flex;
@@ -80,4 +83,25 @@ width: ;
     font-size: 30px;
     display: flex;
     justify-content: center;
+}
+
+input {
+    width: 30%;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.initials {
+    padding-bottom: 10px;
+    font-size: 24px
+}
+
+.end-of-game {
+    text-align: center;
+}
+
+
+.table {
+    width: 40%;
+    margin-bottom: 50px;
 }

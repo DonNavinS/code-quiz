@@ -4,10 +4,13 @@ var titleEl = document.querySelector("#title");
 var instructionsEl = document.querySelector("#instructions");
 var timerEl = document.querySelector("#timer");
 var finalEl = document.querySelector("#end-of-game");
+var tableEl = document.querySelector("#table");
 
+document.querySelector("#table").style.display = "none";
 
 var timer = 90
-
+var quizScore;
+var timerInterval;
 
 function startTimer() {
 
@@ -15,14 +18,13 @@ var timeDisplay = document.createElement("h2");
 timeDisplay.textContent = timer;
 timerEl.appendChild(timeDisplay);
 
-var timerInterval = setInterval(() => {
+ timerInterval = setInterval(() => {
     timer --;
     timeDisplay.textContent = timer;
 
     if (timer <=0) {
         clearInterval(timerInterval);
         finalScore();
-
     };
 
 
@@ -34,9 +36,12 @@ function stopTimer(){
     
 }
 function timePenalty() {
-    timer -=5;
+    if (timer>=10) {
+    timer -=10;
+} else {
+    timer=0
 }
-
+}
 
 
 
@@ -53,22 +58,22 @@ function startQuiz() {
 
     //Create list of options
     var option_1 = document.createElement("button");
-    option_1.className = "correct-answer-button";
+    option_1.className = "answer-button";
     option_1.textContent = "This is the correct answer";
     optionsEl.appendChild(option_1);
 
     var option_2 = document.createElement("button");
-    option_2.className = "wrong-answer-button";
+    option_2.className = "answer-button";
     option_2.textContent = "This is not correct";
     optionsEl.appendChild(option_2);
 
     var option_3 = document.createElement("button");
-    option_3.className = "wrong-answer-button";
+    option_3.className = "answer-button";
     option_3.textContent = "This is not correct";
     optionsEl.appendChild(option_3);
 
     var option_4 = document.createElement("button");
-    option_4.className = "wrong-answer-button";
+    option_4.className = "answer-button";
     option_4.textContent = "This is not correct";
     optionsEl.appendChild(option_4);
 
@@ -114,22 +119,22 @@ function secondQuestion() {
     questionEl.appendChild(secondQ);
 
     var option_1 = document.createElement("button");
-    option_1.className = "wrong-answer-button";
+    option_1.className = "answer-button";
     option_1.textContent = "This is now incorrect";
     optionsEl.appendChild(option_1);
 
     var option_2 = document.createElement("button");
-    option_2.className = "correct-answer-button";
+    option_2.className = "answer-button";
     option_2.textContent = "This is now the correct choice";
     optionsEl.appendChild(option_2);
 
     var option_3 = document.createElement("button");
-    option_3.className = "wrong-answer-button";
+    option_3.className = "answer-button";
     option_3.textContent = "This is still not correct";
     optionsEl.appendChild(option_3);
 
     var option_4 = document.createElement("button");
-    option_4.className = "wrong-answer-button";
+    option_4.className = "answer-button";
     option_4.textContent = "This is also not correct";
     optionsEl.appendChild(option_4);
 
@@ -170,22 +175,22 @@ function thirdQuestion() {
 
 
     var option_1 = document.createElement("button");
-    option_1.className = "wrong-answer-button";
+    option_1.className = "answer-button";
     option_1.textContent = "This is wrong";
     optionsEl.appendChild(option_1);
 
     var option_2 = document.createElement("button");
-    option_2.className = "correct-answer-button";
+    option_2.className = "answer-button";
     option_2.textContent = "This is no longer the correct choice";
     optionsEl.appendChild(option_2);
 
     var option_3 = document.createElement("button");
-    option_3.className = "wrong-answer-button";
+    option_3.className = "answer-button";
     option_3.textContent = "Nope";
     optionsEl.appendChild(option_3);
 
     var option_4 = document.createElement("button");
-    option_4.className = "wrong-answer-button";
+    option_4.className = "answer-button";
     option_4.textContent = "This is the answer to Q3";
     optionsEl.appendChild(option_4);
 
@@ -223,22 +228,22 @@ function fourthQuestion() {
 
 
     var option_1 = document.createElement("button");
-    option_1.className = "wrong-answer-button";
+    option_1.className = "answer-button";
     option_1.textContent = "This is the answer";
     optionsEl.appendChild(option_1);
 
     var option_2 = document.createElement("button");
-    option_2.className = "correct-answer-button";
+    option_2.className = "answer-button";
     option_2.textContent = "This is not it";
     optionsEl.appendChild(option_2);
 
     var option_3 = document.createElement("button");
-    option_3.className = "wrong-answer-button";
+    option_3.className = "answer-button";
     option_3.textContent = "Incorrect";
     optionsEl.appendChild(option_3);
 
     var option_4 = document.createElement("button");
-    option_4.className = "wrong-answer-button";
+    option_4.className = "answer-button";
     option_4.textContent = "This was the answer to Q3";
     optionsEl.appendChild(option_4);
 
@@ -275,27 +280,28 @@ function fifthQuestion() {
 
 
     var option_1 = document.createElement("button");
-    option_1.className = "wrong-answer-button";
+    option_1.className = "answer-button";
     option_1.textContent = "No good";
     optionsEl.appendChild(option_1);
 
     var option_2 = document.createElement("button");
-    option_2.className = "correct-answer-button";
+    option_2.className = "answer-button";
     option_2.textContent = "This is correct now ";
     optionsEl.appendChild(option_2);
 
     var option_3 = document.createElement("button");
-    option_3.className = "wrong-answer-button";
+    option_3.className = "answer-button";
     option_3.textContent = "not the one";
     optionsEl.appendChild(option_3);
 
     var option_4 = document.createElement("button");
-    option_4.className = "wrong-answer-button";
+    option_4.className = "answer-button";
     option_4.textContent = "wrong";
     optionsEl.appendChild(option_4);
 
     option_2.addEventListener("click", finalScore);
     option_2.addEventListener("click", removePrevious);
+    option_2.addEventListener("click", timerCorrection);
 
 
     option_1.addEventListener("click", finalScore);
@@ -318,15 +324,53 @@ function fifthQuestion() {
 
 };
 
+function timerCorrection() {
+    timer-=10;
+}
 
 function finalScore() {
+    
+clearInterval(timerInterval);
+
 titleEl.remove();
 instructionsEl.remove();
 questionEl.remove();
 optionsEl.remove();
+
+
 var endOfQuiz = document.createElement("h1")
 endOfQuiz.classname = "end-of-quiz";
 endOfQuiz.textContent = "This is your final Score!";
 finalEl.appendChild(endOfQuiz);
-var status = "done";
+
+var initials = document.createElement("input");
+initials.type = "text";
+initials.placeholder= "Type in your initials here!";
+initials.id = "initials";
+initials.className = "initials";
+finalEl.appendChild(initials);
+
+var submitButton = document.createElement("button");
+submitButton.innerHTML = "Submit"
+submitButton.className = "submit-button";
+finalEl.appendChild(submitButton);
+
+document.querySelector("#table").style.display = "block";
+
+
+
+timer += 10
+
+submitButton.addEventListener("click", function() {
+    localStorage.setItem(initials.value, timer)
+    tableEl.innerHTML += initials.value + ": " + timer + ";  " ;
+})
+
+
+ for (var i = 0 ; i<localStorage.length ; i++) {
+    tableEl.innerHTML += localStorage.key(i) + ": " + localStorage.getItem(localStorage.key(i)) + ";  ";
 }
+
+}
+
+
