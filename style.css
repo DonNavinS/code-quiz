@@ -1,0 +1,121 @@
+*{
+   
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+text-align: center;
+padding-top: 100px;
+}
+
+p {
+    text-align: center;
+    justify-content: center;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 100px;
+}
+
+
+
+.start-button {
+
+transition-duration: 0.4s;
+font-size: 30px;
+border-radius: 6px;
+border: rgb(87, 2, 87) 3px solid;
+
+}
+
+.start-button:hover {
+    background-color: rgb(87, 2, 87);
+    color: white;
+}
+
+
+.center-button {
+    display: flex;
+    justify-content: center;
+
+}
+
+.questions {
+    font-size: 24px;
+    text-align: center;
+    list-style-position: inside;
+}
+
+
+.answer-button {
+transition-duration: 0.4s;
+font-size: 30px;
+border-radius: 6px;
+border: rgb(87, 2, 87) 3px solid;
+width: ;
+}
+
+.answer-button:hover {
+    background-color: rgb(87, 2, 87);
+    color: white;
+}
+
+.submit-button {
+    
+transition-duration: 0.4s;
+font-size: 30px;
+border-radius: 6px;
+border: rgb(87, 2, 87) 3px solid;
+}
+
+.submit-button:hover {
+    background-color: rgb(87, 2, 87);
+    color: white;
+}
+
+
+.start-over {
+    
+    transition-duration: 0.4s;
+    font-size: 30px;
+    border-radius: 6px;
+    border: rgb(87, 2, 87) 3px solid;
+    }
+    
+.start-over:hover {
+   background-color: rgb(87, 2, 87);
+    color: white;
+
+}
+.options {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 100px;
+}
+
+.timer {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    width: 30%;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.initials {
+    padding-bottom: 10px;
+    font-size: 24px
+}
+
+.end-of-game {
+    text-align: center;
+}
+
+
+.table {
+    width: 40%;
+    margin-bottom: 50px;
+}
