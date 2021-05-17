@@ -1,5 +1,5 @@
 *{
-    background-color: rgb(216, 236, 103);
+   
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -72,6 +72,20 @@ border: rgb(87, 2, 87) 3px solid;
     color: white;
 }
 
+
+.start-over {
+    
+    transition-duration: 0.4s;
+    font-size: 30px;
+    border-radius: 6px;
+    border: rgb(87, 2, 87) 3px solid;
+    }
+    
+.start-over:hover {
+   background-color: rgb(87, 2, 87);
+    color: white;
+
+}
 .options {
     display: flex;
     justify-content: center;

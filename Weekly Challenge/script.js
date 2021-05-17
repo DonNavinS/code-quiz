@@ -51,7 +51,7 @@ function startQuiz() {
 
     //Create first question
     var firstQ = document.createElement("p");
-    firstQ.textContent = "Question 1: What is the answer to this question?";
+    firstQ.textContent = "Question 1: What does DOM stand for?";
     firstQ.className = "questions";
     questionEl.appendChild(firstQ);
 
@@ -59,22 +59,22 @@ function startQuiz() {
     //Create list of options
     var option_1 = document.createElement("button");
     option_1.className = "answer-button";
-    option_1.textContent = "This is the correct answer";
+    option_1.textContent = "Document Object Model";
     optionsEl.appendChild(option_1);
 
     var option_2 = document.createElement("button");
     option_2.className = "answer-button";
-    option_2.textContent = "This is not correct";
+    option_2.textContent = "Data-Oriented Model";
     optionsEl.appendChild(option_2);
 
     var option_3 = document.createElement("button");
     option_3.className = "answer-button";
-    option_3.textContent = "This is not correct";
+    option_3.textContent = "Data-Oriented Methods";
     optionsEl.appendChild(option_3);
 
     var option_4 = document.createElement("button");
     option_4.className = "answer-button";
-    option_4.textContent = "This is not correct";
+    option_4.textContent = "Digital Object Manipulation";
     optionsEl.appendChild(option_4);
 
 // Go to next question if correct answer is chosen
@@ -114,36 +114,36 @@ startButton.addEventListener("click", startTimer);
 function secondQuestion() {
 
     var secondQ = document.createElement("p");
-    secondQ.textContent = "Question 2: What is the correct answer now?";
+    secondQ.textContent = "Question 2: How do you initialize a function called 'testing' in Javascript?";
     secondQ.className = "questions";
     questionEl.appendChild(secondQ);
 
     var option_1 = document.createElement("button");
     option_1.className = "answer-button";
-    option_1.textContent = "This is now incorrect";
+    option_1.textContent = "initialize function:testing";
     optionsEl.appendChild(option_1);
 
     var option_2 = document.createElement("button");
     option_2.className = "answer-button";
-    option_2.textContent = "This is now the correct choice";
+    option_2.textContent = "function testing(){}";
     optionsEl.appendChild(option_2);
 
     var option_3 = document.createElement("button");
     option_3.className = "answer-button";
-    option_3.textContent = "This is still not correct";
+    option_3.textContent = "create testing function";
     optionsEl.appendChild(option_3);
 
     var option_4 = document.createElement("button");
     option_4.className = "answer-button";
-    option_4.textContent = "This is also not correct";
+    option_4.textContent = "init function(testing)";
     optionsEl.appendChild(option_4);
 
 
-
+//Correct Answer
     option_2.addEventListener("click", thirdQuestion);
     option_2.addEventListener("click", removePrevious);
 
-
+//Incorrect Answers
     option_1.addEventListener("click", thirdQuestion);
     option_1.addEventListener("click", removePrevious);
     option_1.addEventListener("click", timePenalty);
@@ -169,44 +169,45 @@ function secondQuestion() {
 function thirdQuestion() {
 
     var thirdQ = document.createElement("p");
-    thirdQ.textContent = "Question 3: How bout now";
+    thirdQ.textContent = "Question 3: When using a for loop, what does the middle statement represent?";
     thirdQ.className = "questions";
     questionEl.appendChild(thirdQ);
 
 
     var option_1 = document.createElement("button");
     option_1.className = "answer-button";
-    option_1.textContent = "This is wrong";
+    option_1.textContent = "The initialization of the counter variable";
     optionsEl.appendChild(option_1);
 
     var option_2 = document.createElement("button");
     option_2.className = "answer-button";
-    option_2.textContent = "This is no longer the correct choice";
+    option_2.textContent = "How much the counter variable increments by";
     optionsEl.appendChild(option_2);
 
     var option_3 = document.createElement("button");
     option_3.className = "answer-button";
-    option_3.textContent = "Nope";
+    option_3.textContent = "The class attribute";
     optionsEl.appendChild(option_3);
 
     var option_4 = document.createElement("button");
     option_4.className = "answer-button";
-    option_4.textContent = "This is the answer to Q3";
+    option_4.textContent = "The condition in which the code will execute";
     optionsEl.appendChild(option_4);
 
-    option_2.addEventListener("click", fourthQuestion);
-    option_2.addEventListener("click", removePrevious);
+//Correct Answer
+    option_4.addEventListener("click", fourthQuestion);
+    option_4.addEventListener("click", removePrevious);
 
-
+// Incorrect Answers
     option_1.addEventListener("click", fourthQuestion);
     option_1.addEventListener("click", removePrevious);
     option_1.addEventListener("click", timePenalty);
     option_3.addEventListener("click", fourthQuestion);
     option_3.addEventListener("click", removePrevious);
     option_3.addEventListener("click", timePenalty);
-    option_4.addEventListener("click", fourthQuestion);
-    option_4.addEventListener("click", removePrevious);
-    option_4.addEventListener("click", timePenalty);
+    option_2.addEventListener("click", fourthQuestion);
+    option_2.addEventListener("click", removePrevious);
+    option_2.addEventListener("click", timePenalty);
 
 
     function removePrevious() {
@@ -222,44 +223,46 @@ function thirdQuestion() {
 function fourthQuestion() {
 
     var fourthQ = document.createElement("p");
-    fourthQ.textContent = "Question 4: What's the answer to this one";
+    fourthQ.textContent = "Question 4: Which function is used to to write in the console?";
     fourthQ.className = "questions";
     questionEl.appendChild(fourthQ);
 
 
     var option_1 = document.createElement("button");
     option_1.className = "answer-button";
-    option_1.textContent = "This is the answer";
+    option_1.textContent = "console.innerText = ";
     optionsEl.appendChild(option_1);
 
     var option_2 = document.createElement("button");
     option_2.className = "answer-button";
-    option_2.textContent = "This is not it";
+    option_2.textContent = "console{}";
     optionsEl.appendChild(option_2);
 
     var option_3 = document.createElement("button");
     option_3.className = "answer-button";
-    option_3.textContent = "Incorrect";
+    option_3.textContent = "function console()";
     optionsEl.appendChild(option_3);
 
     var option_4 = document.createElement("button");
     option_4.className = "answer-button";
-    option_4.textContent = "This was the answer to Q3";
+    option_4.textContent = "console.log()";
     optionsEl.appendChild(option_4);
 
-    option_2.addEventListener("click", fifthQuestion);
-    option_2.addEventListener("click", removePrevious);
 
+// Correct Answers
+    option_4.addEventListener("click", fifthQuestion);
+    option_4.addEventListener("click", removePrevious);
 
+// Incorrect Answers
     option_1.addEventListener("click", fifthQuestion);
     option_1.addEventListener("click", removePrevious);
     option_1.addEventListener("click", timePenalty);
     option_3.addEventListener("click", fifthQuestion);
     option_3.addEventListener("click", removePrevious);
     option_3.addEventListener("click", timePenalty);
-    option_4.addEventListener("click", fifthQuestion);
-    option_4.addEventListener("click", removePrevious);
-    option_4.addEventListener("click", timePenalty);
+    option_2.addEventListener("click", fifthQuestion);
+    option_2.addEventListener("click", removePrevious);
+    option_2.addEventListener("click", timePenalty);
 
     function removePrevious() {
         option_1.remove();
@@ -274,45 +277,49 @@ function fourthQuestion() {
 function fifthQuestion() {
 
     var fifthQ = document.createElement("p");
-    fifthQ.textContent = "Question 5: This is the last one";
+    fifthQ.textContent = "Question 5: What does CSS stand for?";
     fifthQ.className = "questions";
     questionEl.appendChild(fifthQ);
 
 
     var option_1 = document.createElement("button");
     option_1.className = "answer-button";
-    option_1.textContent = "No good";
+    option_1.textContent = "Computer Style Sheets";
     optionsEl.appendChild(option_1);
 
     var option_2 = document.createElement("button");
     option_2.className = "answer-button";
-    option_2.textContent = "This is correct now ";
+    option_2.textContent = "Cascading Style Sheets ";
     optionsEl.appendChild(option_2);
 
     var option_3 = document.createElement("button");
     option_3.className = "answer-button";
-    option_3.textContent = "not the one";
+    option_3.textContent = "Content Styling Source";
     optionsEl.appendChild(option_3);
 
     var option_4 = document.createElement("button");
     option_4.className = "answer-button";
-    option_4.textContent = "wrong";
+    option_4.textContent = "Content Style Sheets";
     optionsEl.appendChild(option_4);
 
-    option_2.addEventListener("click", finalScore);
-    option_2.addEventListener("click", removePrevious);
-    option_2.addEventListener("click", timerCorrection);
 
-
+// Correct Answer
+        option_2.addEventListener("click", finalScore);
+        option_2.addEventListener("click", removePrevious);
+        option_2.addEventListener("click", timerCorrection);
+// Incorrect Answers
+    option_1.addEventListener("click", timePenalty);
+    option_3.addEventListener("click", timePenalty);
+    option_4.addEventListener("click", timePenalty);
     option_1.addEventListener("click", finalScore);
     option_1.addEventListener("click", removePrevious);
-    option_1.addEventListener("click", timePenalty);
     option_3.addEventListener("click", finalScore);
     option_3.addEventListener("click", removePrevious);
-    option_3.addEventListener("click", timePenalty);
     option_4.addEventListener("click", finalScore);
     option_4.addEventListener("click", removePrevious);
-    option_4.addEventListener("click", timePenalty);
+
+
+    
 
     function removePrevious() {
         option_1.remove();
@@ -359,7 +366,7 @@ document.querySelector("#table").style.display = "block";
 
 
 
-timer += 10
+timer += 10;
 
 submitButton.addEventListener("click", function() {
     localStorage.setItem(initials.value, timer)
@@ -371,6 +378,18 @@ submitButton.addEventListener("click", function() {
     tableEl.innerHTML += localStorage.key(i) + ": " + localStorage.getItem(localStorage.key(i)) + ";  ";
 }
 
+
+function startOver() {
+    location.reload();
 }
+
+var startOverButton = document.createElement("button");
+startOverButton.innerHTML = "Start Over";
+startOverButton.className = "start-over";
+finalEl.appendChild(startOverButton);
+
+startOverButton.addEventListener("click", startOver)
+}
+
 
 
